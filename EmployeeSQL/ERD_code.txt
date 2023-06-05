@@ -1,0 +1,35 @@
+Department
+-
+dep_no varchar(10) pk
+dep_name varchar(255) unique
+
+
+Title
+-
+title_id varchar(10) pk
+title varchar unique
+
+Employee
+-
+emp_no int pk
+emp_title varchar(10) FK >- Title.title_id
+birth_date date
+first_name varchar(50)
+last_name varchar(50)
+sex varchar
+hire_date date
+
+Dep_Emp
+-
+emp_no int pk FK - Employee.emp_no
+dep_no varchar(10) pk FK >- Department.dep_no
+
+Dep_Manager
+-
+dep_no varchar(10) pk FK -< Department.dep_no
+emp_no int pk FK - Employee.emp_no
+
+Salary
+-
+emp_no int Unique FK - Employee.emp_no
+salary float
